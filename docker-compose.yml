@@ -1,0 +1,11 @@
+services:
+  app:
+    image: brownhorse
+    container_name: brownhorse-container
+    ports:
+      - "5001:5001"
+    environment:
+      - NODE_ENV=production
+      - PORT=5001
+      - DB_URL=${DB_URL}
+    restart: unless-stopped
